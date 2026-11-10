@@ -1,0 +1,24 @@
+{
+  "app_name": "HvacQuoteCraft",
+  "seo_title": "HvacQuoteCraft — AI Estimate & Proposal Assistant for HVAC Contractors | Laravel Filament SaaS",
+  "primary_keywords": [
+    "HVAC estimate software",
+    "HVAC proposal software",
+    "AI quote drafting",
+    "HVAC contractor SaaS",
+    "Laravel Filament HVAC"
+  ],
+  "secondary_keywords": [
+    "heat pump proposal",
+    "rooftop unit quote",
+    "ServiceTitan quoting",
+    "Jobber estimate automation",
+    "field service estimates",
+    "revenue operations HVAC"
+  ],
+  "author": {
+    "name": "Imran Ahmed",
+    "email": "me@imrandev.bd",
+    "website": "https://imrandev.bd/contact"
+  }
+}

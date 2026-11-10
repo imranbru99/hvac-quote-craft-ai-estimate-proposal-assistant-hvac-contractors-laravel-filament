@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
+  <defs>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1c1010"/>
+      <stop offset="60%" stop-color="#3f1d1d"/>
+      <stop offset="100%" stop-color="#fb7185" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="800" fill="url(#hero)"/>
+  <circle cx="1180" cy="160" r="200" fill="#fecdd3" opacity="0.12"/>
+  <circle cx="1280" cy="620" r="240" fill="#fb7185" opacity="0.12"/>
+  <text x="72" y="90" fill="#fecdd3" font-family="Georgia, serif" font-size="20">imrandev.bd · HVAC Contractors · Home & Field Services</text>
+  <text x="72" y="200" fill="#fff1f2" font-family="Georgia, serif" font-size="56" font-weight="700">HvacQuoteCraft</text>
+  <foreignObject x="72" y="240" width="720" height="140">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="color:#fecdd3;font:22px/1.45 Segoe UI, Arial;">AI Estimate & Proposal for HVAC contractors: draft invoices from job tickets, reconcile payments, and send approved reminders.</div>
+  </foreignObject>
+  <rect x="72" y="420" width="240" height="58" rx="16" fill="#fff1f2"/>
+  <text x="112" y="456" fill="#1c1010" font-family="Segoe UI, Arial" font-size="18" font-weight="700">Launch Demo</text>
+  <rect x="330" y="420" width="220" height="58" rx="16" fill="transparent" stroke="#fecdd3" stroke-width="2"/>
+  <text x="372" y="456" fill="#fff1f2" font-family="Segoe UI, Arial" font-size="18">View Modules</text>
+  <rect x="860" y="140" width="480" height="540" rx="28" fill="#1c1010" opacity="0.45"/>
+  <rect x="900" y="190" width="400" height="80" rx="16" fill="#3f1d1d"/>
+  <rect x="900" y="300" width="190" height="130" rx="16" fill="#3f1d1d"/>
+  <rect x="1110" y="300" width="190" height="130" rx="16" fill="#fb7185" opacity="0.55"/>
+  <rect x="900" y="460" width="400" height="160" rx="16" fill="#3f1d1d"/>
+  <text x="930" y="240" fill="#fff1f2" font-family="Segoe UI, Arial" font-size="22">Dhaka HQ ready</text>
+</svg>

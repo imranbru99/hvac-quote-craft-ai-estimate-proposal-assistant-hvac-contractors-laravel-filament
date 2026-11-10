@@ -1,0 +1,71 @@
+# HvacQuoteCraft — Docker Compose
+# Author: Imran Ahmed <me@imrandev.bd> — https://imrandev.bd/contact
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: imrandevbd/hvac-quote-craft:latest
+    container_name: hvac-quote-craft-app
+    ports:
+      - "${APP_PORT:-8109}:80"
+    environment:
+      APP_NAME: "HvacQuoteCraft"
+      APP_ENV: "${APP_ENV:-local}"
+      APP_DEBUG: "${APP_DEBUG:-true}"
+      APP_URL: "${APP_URL:-http://localhost:8109}"
+      APP_KEY: "base64:vZpfsLRQ9iRbLrA5TvK2yBGBjwY/WQ8sOBV/rMB/fLI="
+      DB_CONNECTION: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: "${DB_DATABASE:-hvac_quote_craft}"
+      DB_USERNAME: "${DB_USERNAME:-laravel}"
+      DB_PASSWORD: "${DB_PASSWORD:-secret}"
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      CACHE_STORE: database
+      SESSION_DRIVER: database
+      QUEUE_CONNECTION: database
+      AUTHOR_NAME: "Imran Ahmed"
+      AUTHOR_EMAIL: "me@imrandev.bd"
+      AUTHOR_WEBSITE: "https://imrandev.bd"
+      ADMIN_PANEL_PREFIX: "ops-kit"
+    volumes:
+      - app_storage:/var/www/html/storage
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:8.4
+    container_name: hvac-quote-craft-mysql
+    environment:
+      MYSQL_DATABASE: "${DB_DATABASE:-hvac_quote_craft}"
+      MYSQL_USER: "${DB_USERNAME:-laravel}"
+      MYSQL_PASSWORD: "${DB_PASSWORD:-secret}"
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD:-rootsecret}"
+    ports:
+      - "${MYSQL_PORT:-33069}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-p${MYSQL_ROOT_PASSWORD:-rootsecret}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: hvac-quote-craft-redis
+    ports:
+      - "${REDIS_PORT:-63799}:6379"
+    restart: unless-stopped
+
+volumes:
+  app_storage:
+  mysql_data:
